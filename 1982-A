@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+int main() {
+	int t ;
+	scanf("%d", &t);
+	while(t--){
+	    int x1, y1, x2, y2; 
+	    scanf("%d %d %d %d\n", &x1, &y1, &x2, &y2);
+	    int first_difference = x1 - y1;
+	    int second_difference = x2 - y2; 
+	    if( (first_difference > 0 && second_difference > 0) || (first_difference < 0 && second_difference <0)){
+	        printf("YES\n");
+	    } else {
+	        printf("NO\n");
+	    }
+	}
+	return 0;
+}
+

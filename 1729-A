@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while(t--){
+        int a, b, c;
+        scanf("%d %d %d", &a, &b, &c);
+
+        int time_for_a = abs(a - 1);
+        int time_for_b = abs(b - c) + abs(c - 1);
+
+        if (time_for_a < time_for_b) {
+            printf("1\n");  
+        } 
+        else if (time_for_a > time_for_b) {
+            printf("2\n");  
+        } 
+        else {
+            printf("3\n");  
+        }
+    }
+    return 0;
+}

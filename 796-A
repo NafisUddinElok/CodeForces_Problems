@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, m, k;
+    scanf("%d %d %d", &n, &m, &k);
+    
+    int prices[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &prices[i]);
+    }
+
+    for (int d = 0; d < n; d++) {
+        if (m - d - 1 >= 0 && prices[m - d - 1] > 0 && prices[m - d - 1] <= k) {
+            printf("%d\n", d * 10);
+            return 0;
+        }
+        if (m + d - 1 < n && prices[m + d - 1] > 0 && prices[m + d - 1] <= k) {
+            printf("%d\n", d * 10);
+            return 0;
+        }
+    }
+
+    return 0;
+}

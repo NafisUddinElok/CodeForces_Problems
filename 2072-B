@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n;
+        char s[200001]; 
+        scanf("%d %s", &n, s);
+        int count_dash = 0, count_underscore = 0;
+        for (int i = 0; s[i]; i++) {
+            if (s[i] == '-') count_dash++;
+            else count_underscore++;
+        }
+        if (count_dash < 2 || count_underscore < 1) {
+            printf("0\n");
+            continue;
+        }
+        int a = count_dash/ 2;
+        int b = (count_dash + 1) / 2;
+        printf("%lld\n", (long long) count_underscore * a * b);
+    }
+    return 0;
+}
